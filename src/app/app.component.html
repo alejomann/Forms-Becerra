@@ -1,0 +1,47 @@
+<form [formGroup]="formulario" (ngSubmit)="enviarContacto()">
+
+  <div>
+    <label>Nombre: </label>
+    <div>
+      <input type="text" formControlName="nombre">
+      <p *ngIf="formulario.get('nombre')?.errors?.['required']">Campo obligatorio.</p>
+    </div>
+    
+  </div>
+
+  <div>
+    <label>Apellido: </label>
+    <div>
+      <input type="text" formControlName="apellido">
+      <p *ngIf="formulario.get('apellido')?.errors?.['required']">Campo obligatorio.</p>
+    </div>
+  </div>
+
+  <div>
+    <label>Nacionalidad: </label>
+    <div>
+      <input type="text" formControlName="nacionalidad">
+      <p *ngIf="formulario.get('nacionalidad')?.errors?.['required']">Campo obligatorio.</p>
+    </div>
+  </div>
+
+  <div>
+    <label>Email: </label>
+    <div>
+      <input type="text" formControlName="email">
+      <p *ngIf="formulario.get('email')?.errors?.['required']">Campo obligatorio.</p>
+      <p *ngIf="formulario.get('email')?.errors?.['email']">Campo con formato email.</p>
+    </div>
+  </div>
+
+  <div>
+    <label>Mensaje: </label>
+    <div>
+      <input type="text" formControlName="mensaje">
+      <p *ngIf="formulario.get('mensaje')?.errors?.['required']">Campo obligatorio.</p>
+    </div>
+  </div>
+
+  <button type="submit">ENVIAR</button>
+
+</form>
